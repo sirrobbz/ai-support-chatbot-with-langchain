@@ -63,20 +63,26 @@ python -m venv venv
 Activate it:
 
 Linux/macOS
+
 source venv/bin/activate
 
 
 3. Install Dependencies
+
 pip install -r requirements.txt
+
 Install Ollama
 
 Download and install Ollama:
+
 https://ollama.com
 
 Verify installation:
+
 ollama --version
 
 Pull a model:
+
 ollama pull llama3.2:3b
 
 You may also use:
@@ -89,9 +95,11 @@ Configure the Application
 Update your configuration values in config.py.
 
 Example:
+
 class Config:
     OLLAMA_MODEL = "llama3.2:3b"
     VECTOR_DB_PATH = "vector_db"
+
 Add Knowledge Base Documents
 
 Place your documents inside:
@@ -102,12 +110,14 @@ PDF
 TXT
 
 Example:
+
 data/docs/
 ├── employee_handbook.pdf
 ├── product_manual.pdf
 └── faq.txt
 
 Build the Vector Database
+
 Before starting the chatbot, generate embeddings and create the FAISS index.
 
 python rag/ingest.py
@@ -125,20 +135,25 @@ vector_db/
 └── index.pkl
 
 Run Ollama
+
 Start the Ollama service:
 
 ollama serve
 
 Verify the model is available:
+
 ollama list
 
 Start the Application
+
 python app.py
 
 Expected output:
+
 Running on http://127.0.0.1:5000
 
 Access the Chatbot
+
 Open your browser:
 
 http://localhost:5000
@@ -159,28 +174,36 @@ Error:
 Vector DB not found. Run: python rag/ingest.py
 
 Solution:
+
 python rag/ingest.py
 
 Verify the database exists:
+
 ls vector_db
 
 Expected:
+
 index.faiss
 index.pkl
 
 Ollama Connection Issues
 
 Verify Ollama is running:
+
 ollama serve
 
 Check available models:
+
 ollama list
 
 Port Already in Use
+
 Find the process:
+
 sudo lsof -i :5000
 
 Kill it:
+
 kill -9 PID
 
 Or run Flask on another port:
