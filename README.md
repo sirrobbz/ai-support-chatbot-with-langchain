@@ -16,37 +16,31 @@ An AI-powered Support Chatbot built with Flask, LangChain, Ollama, FAISS, and RA
 ## Project Structure
 
 ai-support-chatbot/
-│
 ├── app.py
 ├── config.py
 ├── requirements.txt
-│
 ├── routes/
-│   └── chat_routes.py
-│
+    └── chat_routes.py
 ├── services/
-│   ├── llm_service.py
-│   ├── rag_service.py
-│   └── memory_service.py
-│
+    ├── llm_service.py
+    ├── rag_service.py
+    └── memory_service.py
 ├── rag/
-│   ├── ingest.py
-│   ├── retriever.py
-│   └── vectorstore.py
-│
+    ├── ingest.py
+    ├── retriever.py
+    └── vectorstore.py
 ├── data/
-│   └── docs/
-│       ├── document1.pdf
-│       └── document2.txt
-│
+    └── docs/
+    ├── document1.pdf
+    └── document2.txt
 ├── templates/
-│   └── index.html
-│
+    └── index.html
 ├── static/
-│   ├── css/
-│   └── js/
-│
+    ├── css/
+    └── js/
 └── vector_db/
+    ├── index.faiss
+    └── index.pkl
 
 ## Requirements
 
